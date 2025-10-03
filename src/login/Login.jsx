@@ -21,16 +21,13 @@ const Login = () => {
         username: data.username,
         password: data.password,
       });
-      // 🔹 Agar token qaytsa — localStorage ga saqlaymiz
-    if (res.data?.token) {
-     localStorage.setItem("token", res.data.token);
-     navigate("/"); // ro‘yxatdan o‘tishdan keyin bosh sahifaga yuboradi
-    } else {
-     alert("✅ Ro‘yxatdan o‘tish muvaffaqiyatli, lekin token kelmadi!");
-     navigate("/login");
-     }
-
-
+     if (res.data?.token) {
+  // 🔹 tokenni saqlash
+  localStorage.setItem("token", res.data.token);
+  navigate("/"); // login bo‘lgandan keyin bosh sahifaga yuboradi
+     } else {
+  alert("❌ Login muvaffaqiyatsiz yoki token kelmadi!");
+      }
     } catch (err) {
       console.error("❌ Login xato:", err);
       alert(err.response?.data?.message || "Xatolik yuz berdi");
