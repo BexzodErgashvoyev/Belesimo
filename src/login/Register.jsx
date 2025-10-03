@@ -20,7 +20,7 @@ const Register = () => {
       });
 
       // 🔹 Agar token qaytsa — localStorage ga saqlaymiz
-   if (res.data?.token) {
+if (res.data?.token) {
   localStorage.setItem("token", res.data.token);
   navigate("/"); // ro‘yxatdan o‘tishdan keyin bosh sahifaga yuboradi
 } else {
