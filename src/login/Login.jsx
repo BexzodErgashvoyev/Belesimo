@@ -25,7 +25,7 @@ const Login = () => {
       if (res.data?.token) {
         // 🔹 tokenni saqlash
         localStorage.setItem("token", res.data.token);
-        navigate("/menu"); // login bo‘lgandan keyin /menu ga o‘tkazadi
+        navigate("/"); // login bo‘lgandan keyin /menu ga o‘tkazadi
       } else {
         alert("Login muvaffaqiyatli, lekin token kelmadi!");
       }

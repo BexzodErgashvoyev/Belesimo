@@ -22,7 +22,7 @@ const Register = () => {
       // 🔹 Agar token qaytsa — localStorage ga saqlaymiz
       if (res.data?.token) {
         localStorage.setItem("token", res.data.token);
-        navigate("/menu");
+        navigate("/");
       } else {
         alert("✅ Ro‘yxatdan o‘tish muvaffaqiyatli, lekin token kelmadi!");
         navigate("/login");
