@@ -23,10 +23,10 @@ const Login = () => {
       });
      if (res.data?.token) {
   // 🔹 tokenni saqlash
-  localStorage.setItem("token", res.data.token);
-  navigate("/"); // login bo‘lgandan keyin bosh sahifaga yuboradi
+   localStorage.setItem("token", res.data.token);
+   navigate("/"); // login bo‘lgandan keyin bosh sahifaga yuboradi
      } else {
-  alert("❌ Login muvaffaqiyatsiz yoki token kelmadi!");
+   alert("❌ Login muvaffaqiyatsiz yoki token kelmadi!");
       }
     } catch (err) {
       console.error("❌ Login xato:", err);
