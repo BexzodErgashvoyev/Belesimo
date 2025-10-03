@@ -21,7 +21,7 @@ const Login = () => {
         username: data.username,
         password: data.password,
       });
-       if (res.data?.token) {
+        if (res.data?.token) {
         // 🔹 tokenni saqlash
         localStorage.setItem("token", res.data.token);
         navigate("/"); // login bo‘lgandan keyin /menu ga o‘tkazadi
