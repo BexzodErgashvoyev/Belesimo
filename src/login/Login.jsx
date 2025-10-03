@@ -22,13 +22,13 @@ const Login = () => {
         password: data.password,
       });
 
-      if (res.data?.token) {
-        // 🔹 tokenni saqlash
-        localStorage.setItem("token", res.data.token);
-        navigate("/"); // login bo‘lgandan keyin /menu ga o‘tkazadi
-      } else {
-        alert("Login muvaffaqiyatli, lekin token kelmadi!");
-      }
+   if (res.data?.token) {
+  localStorage.setItem("token", res.data.token);
+  navigate("/"); // login bo‘lgandan keyin bosh sahifaga yuboradi
+} else {
+  alert("Login muvaffaqiyatli, lekin token kelmadi!");
+}
+
     } catch (err) {
       console.error("❌ Login xato:", err);
       alert(err.response?.data?.message || "Xatolik yuz berdi");

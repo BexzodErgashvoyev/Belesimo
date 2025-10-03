@@ -20,13 +20,14 @@ const Register = () => {
       });
 
       // 🔹 Agar token qaytsa — localStorage ga saqlaymiz
-      if (res.data?.token) {
-        localStorage.setItem("token", res.data.token);
-        navigate("/");
-      } else {
-        alert("✅ Ro‘yxatdan o‘tish muvaffaqiyatli, lekin token kelmadi!");
-        navigate("/login");
-      }
+   if (res.data?.token) {
+  localStorage.setItem("token", res.data.token);
+  navigate("/"); // ro‘yxatdan o‘tishdan keyin bosh sahifaga yuboradi
+} else {
+  alert("✅ Ro‘yxatdan o‘tish muvaffaqiyatli, lekin token kelmadi!");
+  navigate("/login");
+}
+
     } catch (err) {
       console.error("❌ Register xato:", err);
       alert(err.response?.data?.message || "Xatolik yuz berdi");
